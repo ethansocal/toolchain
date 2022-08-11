@@ -2,13 +2,7 @@
 
 	section	.text
 	public	_putchar
-_putchar:
-	pop	de
-	ex	(sp),hl
-	push	de
-	push	hl
-	call	_outchar
-	pop	hl
-	ret
+
+_putchar := _outchar
 
 	extern	_outchar
