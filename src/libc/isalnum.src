@@ -7,16 +7,15 @@ _isalnum:
 	pop	de
 	push	de
 	push	hl
-	or	a,a
+	xor	a,a
 	sbc	hl,hl
-	bit	7,e
-	ret	nz
-	ex	de,hl
-	ld	de,___maptab
+	or	a,e
+	ret	m
+	ld	hl,___maptab
 	add	hl,de
 	ld	a,(hl)
 	and	a,13
-	sbc	hl,hl
+	ex	de,hl
 	ld	l,a
 	ret
 
